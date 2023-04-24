@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_app.xml"
+    app:startDestination="@id/patientFragment">
+
+
+    <fragment
+        android:id="@+id/patientFragment"
+        android:name="come.basim.step_by_step.prestentation.feature.patient.PatientFragment"
+        android:label="PatientFragment" />
+    <fragment
+
+        android:id="@+id/detailsFragment"
+        android:name="come.basim.step_by_step.prestentation.feature.details.DetailsFragment"
+        android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/addPatientFragment"
+        android:name="come.basim.step_by_step.prestentation.feature.add.AddPatientFragment"
+        android:label="AddPatientFragment" />
+</navigation>

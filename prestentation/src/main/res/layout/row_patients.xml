@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<variable
+    name="model"
+    type="come.basim.step_by_step.domin.model.patient.PatientResponseModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{model.selected ? @color/teal_200 : @color/teal_700}">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_view_patients"
+                imageUrl="@{model.photo}"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.MaterialCardView"
+                tools:src="@drawable/avatar" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="@id/image_view_patients"
+                app:layout_constraintTop_toTopOf="@id/image_view_patients"
+                android:src="@drawable/ic_baseline_delete_24"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_name"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{model.namePatients}"
+                android:textColor="@{model.selected ? @color/white : @color/black}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_patients"
+                tools:text="@tools:sample/full_names" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_Birthdate"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{model.birthdate}"
+                android:textColor="@{model.selected ? @color/white : @color/black}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_name"
+                tools:text="@tools:sample/full_names" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_condition"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{model.condition}"
+                android:textColor="@{model.selected ? @color/white : @color/black}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_Birthdate"
+                tools:text="@tools:sample/full_names" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
